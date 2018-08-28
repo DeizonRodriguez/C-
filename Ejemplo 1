@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main() {
+    double a,b;
+    int dentera=0;
+    double dreal=0;
+    cout<<"Primer numero: \n";
+    cin>>a;
+    cout<<"Segundo numero: \n";
+    cin>>b;
+    dentera=a/b;
+    cout<<"Division entera: "<<dentera<<endl;
+    dreal=a/b;
+    cout<<"Division real: "<<dreal;
+};
