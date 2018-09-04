@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+
+int main() {
+    int consumo = 0;
+    float monto = 0;
+    const float precio1 = 0.4522;
+    const float precio2 = 0.7;
+
+    cout << "¿Cuánto es su consumo? " << endl;
+    cin >> consumo;
+    if (consumo <= 100) {
+        monto = consumo * precio1;
+    } else {
+        monto = 100 * precio1 + (consumo - 100) * precio2;
+    }
+    cout << "El monto a pagar es: " << monto << endl;
+    return 0;
+
+}
