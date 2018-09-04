@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+
+int main() {
+    int a=0;
+    cout << "¿Cuántos colores son? \n";
+    cin >> a;
+    int c24 = a / 24;
+    int r1 = a % 24;
+    int c12 = r1 / 12;
+    int r2 = r1 % 12;
+    int c6 = r2 / 6;
+    int r3 = r2 % 6;
+    cout << "Cajas de 24 unidades: " << c24 << endl;
+    cout << "Cajas de 12 unidades: " << c12 << endl;
+    cout << "Cajas de 6 unidades: " << c6 << endl;
+    cout << "Colores que sobran: " << r3 << endl;
+
+}
