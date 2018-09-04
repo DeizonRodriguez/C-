@@ -19,3 +19,4 @@ int main() {
     cout << "Colores que sobran: " << r3 << endl;
 
 }
+
