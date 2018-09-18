@@ -1,0 +1,14 @@
+using namespace std;
+
+
+int main() {
+    int i=0;
+    int n=0;
+    int multiplos=0;
+    cin>>n;
+    for (int i=0;i<n;i+=1){
+        multiplos+=3;
+    cout<<multiplos<<" ";
+    }
+    return 0;
+}
