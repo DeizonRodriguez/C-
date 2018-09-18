@@ -1,0 +1,20 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    int i=1;
+    double inversos=0;
+    double inversos1=0;
+    int n=0;
+    cin >> n;
+    for (int i=1; i<=n; i+=1){
+        inversos1=(1/(pow(i,0.5)));
+        inversos+=inversos1;
+    }
+    cout<< setprecision(4) << inversos;
+}
