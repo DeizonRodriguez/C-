@@ -1,0 +1,26 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main(){
+    int n=0;
+    int base=0;
+    int contador=0;
+    int base10=0;
+
+    cout<<"Ingrese el número: ";
+    cin>>n;
+
+    cout<<"Ingrese la base: ";
+    cin>>base;
+    
+
+    while(n>0){
+        int r=n%10;
+        cout << r << "\n";
+        n/=10;
+        base10 += r*pow(base,contador);
+        contador++;
+    }
+    cout << base10;
+}
