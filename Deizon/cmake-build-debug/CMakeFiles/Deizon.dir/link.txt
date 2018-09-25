@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Deizon.dir/main.cpp.o CMakeFiles/Deizon.dir/MisFunciones.cpp.o  -o Deizon 
