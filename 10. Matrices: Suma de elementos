@@ -1,0 +1,49 @@
+#include <iostream>
+#include <ctime>
+#include <iomanip>
+void crear_matriz(int i, int j, int **&matriz){
+    for(int r=0;r<i;r++){
+        for(int x=0;x<j;x++){
+            matriz[r][x]=rand()%1000;
+        }
+    }
+}
+unsigned long int suma_elementos(int i,int j,int **&matriz){
+    unsigned long int sumador=0;
+    for(int r=0;r<i;r++){
+        for(int x=0;x<j;x++){
+            sumador+=matriz[r][x];
+        }
+    }
+    return sumador;
+}
+
+void imprimir_mat(int i,int j,int **&matriz){
+    std::cout<<'\n';
+    for(int r=0;r<i;r++){
+        for(int x=0;x<j;x++){
+            std::cout<<std::setw(5);
+            std::cout<<matriz[r][x]<<" ";
+        }
+        std::cout<<'\n';
+    }std::cout<<'\n';
+}
+
+int main(){
+    srand(static_cast<unsigned int>(time(nullptr)));
+    int i,j;
+    std::cout<<"ingrese numero de filas: ";
+    std::cin>>i;
+    std::cout<<"ingrese numero de columnas: ";
+    std::cin>>j;
+    int **matriz = new int *[i];
+    for(int h=0;h<i;h++){
+        matriz[h]=new int [j];
+    }
+    crear_matriz(i,j,matriz);
+    imprimir_mat(i,j,matriz);
+    std::cout<<"La suma de los elementos de la matriz es: "<<suma_elementos(i,j,matriz);
+    delete[]*matriz;
+    delete[]matriz;
+
+ }
