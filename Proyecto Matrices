@@ -1,49 +1,87 @@
 #include <iostream>
+#include <cmath>
+
 
 using namespace std;
 
-int main() {
-    int c,f;
-    int centro;
-    int contador=0;
+
+void DistanciaDesdePunto(int n,int PuntoInicio){
     float distancia=0;
+    int borde=0;
+    double c=0,f=0,x=0,y=0;
+    char arrN[n][n];
+    int prob;
+
+    c = PuntoInicio;
+    f = PuntoInicio;
+    arrN[(centro)][(centro)]= '.';
+
+    while(borde==0){
+        prob = rand()%4;
+        switch (prob){
+            case 0:
+                arrN[f][c]= '';
+                arrN[f+1][c]= '.';
+                c=c+1;
+                y = y+1;
+            case 1:
+                arrN[f][c]= '';
+                arrN[f-1][c]= '.';
+                c=c-1;
+                y = y-1
+
+            case 2:
+                arrN[f][c]= '';
+                arrN[f][c+1]= '.';
+                x=x+1;
+
+            case 3:
+                arrN[f][c]= '';
+                arrN[f][c-1]= '.';
+                x=x-1;
+        }
+        for (int i = 0; i < ; ++i) {
+            if((arrN[i][n-1]!='.')||(arrN[n-1][i]!='.')||(arrN[0][i]!='.')||(arrN[i][0]!='.'))
+                borde = 0;
+            else
+                borde = 1;
+        }
+
+    }
+    distancia = sqrt(pow(x,2)+pow(y,2));
+    cout << distancia << endl();
+
+}
+
+int main() {
+    int opcion = 1;
+    int PuntoInicio;
     int n;
     cin >> n;
     if (n%2==0)
         n=n+1;
+    cout << 'Ingrese su opcion: '
+    cin << opcion;
+    cout << '1. Distancia desde el centro' << endl();
+    cout << '2. Distancia desde un punto aleatorio' << endl();
+    cout << '3. ¿Punto o Borde?' << endl();
+    cout << '4. Veces por el punto y borde' << endl();
 
-    char arrN[n][n];
-    int prob;
-    centro = (n-1)/2;
-    c = centro;
-    f = centro;
-    prob = rand()%4;
-    arrN[(centro)][(centro)]= '.';
+    switch (opcion){
 
-    if ((arrN[contador][n-1]!='.')||(arrN[n-1][contador])){
-
-    }
-    switch (prob){
-        case 0:
-            arrN[(c)][(f)]= '';
-            arrN[(c+1)][(f)]= '.';
-            c=c+1;
         case 1:
-            arrN[(c)][(f)]= '';
-            arrN[(c-1)][(f)]= '.';
-            c=c-1;
+            PuntoInicio = (n-1)/2;
+            DistanciaDesdePunto(n,PuntoInicio);
         case 2:
-            arrN[(c)][(f)]= '';
-            arrN[(c)][(f+1)]= '.';
-            f=f+1;
-        case 3:
-            arrN[(c)][(f)]= '';
-            arrN[(c)][(f-1)]= '.';
-            f=f-1;
+            PuntoInicio = rand()%n;
+            while (PuntoInicio == 0){
+                PuntoInicio = rand()%n
+            }
+            DistanciaDesdePunto(n,PuntoInicio);
+
 
     }
 
 
 
-    return 0;
-}
+
