@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 #include <cmath>
 
 
@@ -6,41 +7,44 @@ using namespace std;
 
 
 void DistanciaDesdePunto(int n,int PuntoInicio){
-    float distancia=0;
+    double distancia=0;
     int borde=0;
-    double c=0,f=0,x=0,y=0;
+    int c=0,f=0;
+    double x=0,y=0;
     char arrN[n][n];
     int prob;
 
     c = PuntoInicio;
     f = PuntoInicio;
-    arrN[(centro)][(centro)]= '.';
+    arrN[(PuntoInicio)][(PuntoInicio)]= '.';
 
     while(borde==0){
         prob = rand()%4;
         switch (prob){
             case 0:
-                arrN[f][c]= '';
+                arrN[f][c]= ' ';
                 arrN[f+1][c]= '.';
                 c=c+1;
                 y = y+1;
             case 1:
-                arrN[f][c]= '';
+                arrN[f][c]= ' ';
                 arrN[f-1][c]= '.';
                 c=c-1;
-                y = y-1
+                y = y-1;
 
             case 2:
-                arrN[f][c]= '';
+                arrN[f][c]= ' ';
                 arrN[f][c+1]= '.';
                 x=x+1;
 
             case 3:
-                arrN[f][c]= '';
+                arrN[f][c]= ' ';
                 arrN[f][c-1]= '.';
                 x=x-1;
+            default:
+                arrN[f][c]='.';
         }
-        for (int i = 0; i < ; ++i) {
+        for (int i = 0; i < n; ++i) {
             if((arrN[i][n-1]!='.')||(arrN[n-1][i]!='.')||(arrN[0][i]!='.')||(arrN[i][0]!='.'))
                 borde = 0;
             else
@@ -49,39 +53,40 @@ void DistanciaDesdePunto(int n,int PuntoInicio){
 
     }
     distancia = sqrt(pow(x,2)+pow(y,2));
-    cout << distancia << endl();
+    cout << distancia << endl;
 
 }
 
 int main() {
+    srand(time(nullptr));
     int opcion = 1;
     int PuntoInicio;
     int n;
     cin >> n;
-    if (n%2==0)
-        n=n+1;
-    cout << 'Ingrese su opcion: '
-    cin << opcion;
-    cout << '1. Distancia desde el centro' << endl();
-    cout << '2. Distancia desde un punto aleatorio' << endl();
-    cout << '3. ¿Punto o Borde?' << endl();
-    cout << '4. Veces por el punto y borde' << endl();
+    if (n % 2 == 0)
+        n = n + 1;
+    cout << "Ingrese su opcion: " << endl;
+    cout << "1. Distancia desde el centro" << endl;
+    cout << "2. Distancia desde un punto aleatorio" << endl;
+    cout << "3. ¿Punto o Borde?" << endl;
+    cout << "4. Veces por el punto y borde" << endl;
+    cin >> opcion;
 
-    switch (opcion){
-
+    switch (opcion) {
+        default:;
         case 1:
-            PuntoInicio = (n-1)/2;
-            DistanciaDesdePunto(n,PuntoInicio);
+            PuntoInicio = (n - 1) / 2;
+            DistanciaDesdePunto(n, PuntoInicio);
+            break;
         case 2:
-            PuntoInicio = rand()%n;
-            while (PuntoInicio == 0){
-                PuntoInicio = rand()%n
+            PuntoInicio = rand() % n;
+            while (PuntoInicio == 0) {
+                PuntoInicio = rand() % n;
             }
-            DistanciaDesdePunto(n,PuntoInicio);
-
+            DistanciaDesdePunto(n, PuntoInicio);
+            break;
 
     }
-
-
+}
 
 
