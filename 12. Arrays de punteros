@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    float *pAncho = nullptr, *pLargo = nullptr;
+    pAncho = new float;
+    pLargo = new float;
+    cout << "Largo: ";
+    cin >> *pLargo;
+    cout << "Ancho: ";
+    cin >> *pAncho;
+
+    cout << "El area es: " << *pLargo * *pAncho << "\n";
+    cout << "El perimetro es: " << 2 * *pLargo + 2 * *pAncho;
+    delete pAncho;
+    delete pLargo;
+    pAncho = nullptr;
+    pLargo = nullptr;
+    return 0;
+}
+
